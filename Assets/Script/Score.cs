@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     public Text ScoreText;
-    public int scoreValue;
+    private int scoreValue;
 
     // Start is called before the first frame update
     void Start()
     {
-        scoreValue = 20;
+        scoreValue = 0;
         ScoreText.text = "Score : " + scoreValue;
     }
 

@@ -50,4 +50,10 @@ public class GameControl : MonoBehaviour
                 break;
         }
     }
+
+    public void over()
+    {
+        gameover.gameObject.SetActive(true);
+        Time.timeScale = 0;
+    }
 }
