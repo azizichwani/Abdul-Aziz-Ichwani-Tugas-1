@@ -7,9 +7,10 @@ public class Spawn : MonoBehaviour
 {
     public GameObject[] nochar;
     public float posisiMin, posisiMax;
+    public float waktuMin, waktuMax;
     public int enemyCount;
 
-    public float timeBetweenWaves = 3.0f;
+    public float timeBetweenWaves = 7.0f;
     public Text waveText;
     private int waveCount;
 
@@ -31,6 +32,7 @@ public class Spawn : MonoBehaviour
         if (waveIsDone == true )
         {
            StartCoroutine(Munculchar());
+            
         }
     }
 
@@ -42,7 +44,7 @@ public class Spawn : MonoBehaviour
         {
             GameObject randomChar = nochar[Random.Range(0, nochar.Length)];
             Instantiate(randomChar, transform.position + Vector3.right * Random.Range(posisiMin, posisiMax), Quaternion.identity);
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(Random.Range(waktuMin,waktuMax));
         }
 
         //GameObject randomChar = nochar[Random.Range(0, nochar.Length)];
@@ -53,6 +55,8 @@ public class Spawn : MonoBehaviour
         waveCount += 1;
 
         yield return new WaitForSeconds(timeBetweenWaves);
+        
         waveIsDone = true;
+        
     }
 }
