@@ -55,6 +55,7 @@ public class GameControl : MonoBehaviour
         
     }
 
+
     public void over()
     {
         gameover.gameObject.SetActive(true);
