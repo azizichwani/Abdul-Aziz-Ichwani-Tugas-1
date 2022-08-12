@@ -29,7 +29,7 @@ public class EnemyVariant : BaseCharacter, IRaycastable
         }
     }
 
-    protected virtual void Zigzag()
+    void Zigzag()
     {
         ConstraintPos();
 
